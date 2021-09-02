@@ -166,7 +166,7 @@ window.onload = function () {
     tag.innerHTML = tag.innerHTML.split('').map(l => l !== " " ? `<span class="d-inline-block">${l}</span>` : "&nbsp;").join('');
   })
 }
-// sectionScroll?.observe(document.getElementById('rest'));
-// sectionScroll?.observe(document.getElementById('front'));
+sectionScroll?.observe(document.getElementById('rest'));
+sectionScroll?.observe(document.getElementById('front'));
 menuBookObserver?.observe(document.getElementById('book-arrow'));
 menuBookObserver?.observe(document.getElementById('book-form'));
