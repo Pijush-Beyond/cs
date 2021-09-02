@@ -1,0 +1,144 @@
+// Utility generator
+// Used to generate utilities & print utilities
+@mixin generate-utility($utility, $infix, $is-rfs-media-query: false) {
+  $values: map-get($utility, values);
+
+  // If the values are a list or string, convert it into a map
+  @if type-of($values) == "string" or type-of(nth($values, 1)) != "list" {
+    $values: zip($values, $values);
+  }
+
+  @each $key, $value in $values {
+    $properties: map-get($utility, property);
+
+    // Multiple properties are possible, for example with vertical or horizontal margins or paddings
+    @if type-of($properties) == "string" {
+      $properties: append((), $properties);
+    }
+
+    // Use custom class if present
+    $property-class: if(map-has-key($utility, class), map-get($utility, class), nth($properties, 1));
+    $property-class: if($property-class == null, "", $property-class);
+
+    // State params to generate pseudo-classes
+    $state: if(map-has-key($utility, state), map-get($utility, state), ());
+
+    $infix: if($property-class == "" and str-slice($infix, 1, 1) == "-", str-slice($infix, 2), $infix);
+
+    // Don't prefix if value key is null (eg. with shadow class)
+    $property-class-modifier: if($key, if($property-class == "" and $infix == "", "", "-") + $key, "");
+
+    @if map-get($utility, rfs) {
+      // Inside the media query
+      @if $is-rfs-media-query {
+        $val: rfs-value($value);
+
+        // Do not render anything if fluid and non fluid values are the same
+        $value: if($val == rfs-fluid-value($value), null, $val);
+      }
+      @else {
+        $value: rfs-fluid-value($value);
+      }
+    }
+
+    $is-rtl: map-get($utility, rtl);
+
+    @if $value != null {
+      @if $is-rtl == false {
+        /* rtl:begin:remove */
+      }
+
+      
+      // custom
+      @if type-of($value)=='list' {
+        .#{$property-class + $infix + $property-class-modifier} {
+          @each $property,$v in zip($properties,$value) {
+            #{$property}: $v if($enable-important-utilities, !important, null);
+          }
+        }
+  
+        @each $pseudo in $state {
+          .#{$property-class + $infix + $property-class-modifier}-#{$pseudo}:#{$pseudo} {
+            @each $property,$v in zip($properties,$value) {
+              #{$property}: $v if($enable-important-utilities, !important, null);
+            }
+          }
+        }
+      }
+
+      @else if type-of($value)=='map' {
+        $list-value: if(map-get($value,default)=='list',map-get($value,default),if(map-get($value,default),join((),map-get($value,default)),()));
+        @if map-get($value,default) and not map-get($map: $utility, $key: only-state){
+          .#{$property-class + $infix + $property-class-modifier} {
+            @each $property,$v in zip($properties,$list-value) {
+              #{$property}: $v if($enable-important-utilities, !important, null);
+            }
+            @each $pseudo in $state {
+              $pseudo-values: if(map-get($value,$pseudo),map-get($value,$pseudo),if(map-get($value,$state),map-get($value,$state),'include'));
+              @if type-of($pseudo-values)=='string' and type-of($pseudo-values)=='include'{
+                &-#{$pseudo}:#{$pseudo}{
+                  @each $property,$v in zip($properties,$list-value) {
+                    #{$property}: $v if($enable-important-utilities, !important, null);
+                  }
+                }
+              }@else {
+                &:#{$pseudo}{
+                  @if $type-of(pseudo-values)=="map"{
+                    @each $pvk in map-keys($map:$pseudo-values) {
+                      @if $pvk=="include" and map-get($pseudo-values,include) {
+                        @each $property,$v in zip($properties,$list-value) {
+                          #{$property}: $v if($enable-important-utilities, !important, null);
+                        }
+                      }@else{
+                        #{$pvk}: map-get($pseudo-values,$pvk) if($enable-important-utilities, !important, null);
+                      }
+                    }
+                  }@else if type-of($pseudo-values)=='list'{
+                    @each $property,$v in zip($properties,$pseudo-values) {
+                      #{$property}: $v if($enable-important-utilities, !important, null);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }@else{
+          @each $pseudo in $state {
+            $pseudo-values: if(map-get($value,$pseudo),map-get($value,$pseudo),if(map-get($value,$state),map-get($value,$state),'include'));
+            .#{$property-class + $infix + $property-class-modifier}-#{pseudo}:#{$pseudo}{
+              @if $type-of(pseudo-values)=="map"{
+                @each $pvk in map-keys($map:$pseudo-values) {
+                  #{$pvk}: map-get($pseudo-values,$pvk) if($enable-important-utilities, !important, null);
+                }
+              }@else if type-of($pseudo-values)=='list'{
+                @each $property,$v in zip($properties,$pseudo-values) {
+                  #{$property}: $v if($enable-important-utilities, !important, null);
+                }
+              }
+            }
+          }
+        }
+      }
+
+
+      @else {
+        .#{$property-class + $infix + $property-class-modifier} {
+          @each $property in $properties {
+            #{$property}: $value if($enable-important-utilities, !important, null);
+          }
+        }
+  
+        @each $pseudo in $state {
+          .#{$property-class + $infix + $property-class-modifier}-#{$pseudo}:#{$pseudo} {
+            @each $property in $properties {
+              #{$property}: $value if($enable-important-utilities, !important, null);
+            }
+          }
+        }
+      }
+      @if $is-rtl == false {
+        /* rtl:end:remove */
+      }
+    }
+  }
+}

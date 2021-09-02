@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78.17 125.89">
+  <defs>
+    <style>
+      .cls-1{opacity:0.77;}.cls-2{fill:#65617d;}.cls-3,.cls-7{isolation:isolate;}.cls-3{opacity:0.2;}.cls-4{fill:#dce0ed;}.cls-5{fill:#444053;}.cls-6{fill:#33323d;}.cls-7{fill:#6c63ff;opacity:0.3;}</style>
+  </defs>
+  <g id="suv" class="cls-1">
+    <path id="Path_293" data-name="Path 293" class="cls-2" d="M69.55,19.34a16.15,16.15,0,0,1-13.9,29.12l-.72-.33h0l-.51-.26A16.15,16.15,0,1,1,69.55,19.34Z" />
+    <path id="Path_294" data-name="Path 294" class="cls-3" d="M69.55,19.34a16.15,16.15,0,0,1-13.9,29.12l-.72-.33h0l-.51-.26A16.15,16.15,0,1,1,69.55,19.34Z" />
+    <circle id="Ellipse_58" data-name="Ellipse 58" class="cls-4" cx="61.97" cy="33.6" r="8.81" />
+    <circle id="Ellipse_59" data-name="Ellipse 59" class="cls-2" cx="61.97" cy="33.6" r="5.28" />
+    <path id="Path_295" data-name="Path 295" class="cls-2" d="M29.12,95.46a16.15,16.15,0,0,1-13.9,29.12c-.24-.11-.48-.21-.72-.33h0L14,124A16.15,16.15,0,1,1,29.12,95.46Z" />
+    <path id="Path_296" data-name="Path 296" class="cls-3" d="M29.12,95.46a16.15,16.15,0,0,1-13.9,29.12c-.24-.11-.48-.21-.72-.33h0L14,124A16.15,16.15,0,1,1,29.12,95.46Z" />
+    <circle id="Ellipse_60" data-name="Ellipse 60" class="cls-4" cx="21.54" cy="109.72" r="8.81" />
+    <circle id="Ellipse_61" data-name="Ellipse 61" class="cls-2" cx="21.54" cy="109.72" r="5.28" />
+    <path id="Path_297" data-name="Path 297" class="cls-5" d="M69.23,13.48,66.5,18.13l-10.37.06L46.76,32.83l5.76,12.61,2.91,1,1.93,2.36L32,97.64,30.72,97l-.22.41-2.08-.57,2-3.73-4.32,1.16L13,99.48S4.68,116,4.16,116,0,112.62,0,112.62l1.67-8.13,10.88-25c-5.58-9.73-7-16.57-7-16.57L38.31,1.3l16.43,5,0,0Z" />
+    <path id="Path_298" data-name="Path 298" class="cls-6" d="M52,48.36S43.74,36,46.27,31.25l6.15-11.58s1.54-2.9,4.47-2.93l11.84.18-2,3.73s-10.34-1.51-12.41,1.9-5.06,9.51-5.06,9.51A4.53,4.53,0,0,0,50,36.68c1.83,2.56,5,9.63,5,9.63S54.05,51.56,52,48.36Z" />
+    <path id="Path_299" data-name="Path 299" class="cls-6" d="M69.83,10.35,65.7,18.13l6.16,3.38,2.32-8.85Z" />
+    <path id="Path_300" data-name="Path 300" class="cls-6" d="M6.35,120.9a6.66,6.66,0,0,1-2.59-5.62L12.83,95.7s1.86-3,6.67-2.56l10.92-1.09,1.24.66-3.19,6S16,95.78,12,104.27L6.72,114.2s-1.21,2.28,2.08,5.08Z" />
+    <path id="Path_301" data-name="Path 301" class="cls-6" d="M6.7,63.8,40.43.3A2.57,2.57,0,0,0,37,1.37h0l-31.31,59A2.57,2.57,0,0,0,6.7,63.8Z" />
+    <path id="Path_302" data-name="Path 302" class="cls-7" d="M26.13,56.68,16.8,74.25a1.34,1.34,0,0,1-1.82.56,1.48,1.48,0,0,1-.43-.36L9.77,68.34a6.2,6.2,0,0,1-.59-6.71L14.85,51a1.7,1.7,0,0,1,2.29-.71h0l8.39,4.46a1.46,1.46,0,0,1,.61,2Z" />
+    <rect id="Rectangle_62" data-name="Rectangle 62" class="cls-7" x="18.49" y="32.97" width="19.44" height="12.65" rx="5.54" transform="translate(-19.73 45.77) rotate(-62.03)" />
+    <path id="Path_303" data-name="Path 303" class="cls-6" d="M54.74,6.31l0,0L41,33.22,25.31,25.78l13-24.48Z" />
+    <rect id="Rectangle_63" data-name="Rectangle 63" class="cls-7" x="28.84" y="10.84" width="22.25" height="12.65" rx="5.54" transform="translate(6.06 44.4) rotate(-62.03)" />
+    <path id="Rectangle_64" data-name="Rectangle 64" class="cls-6" d="M28.22,62.24l2.85-5.38a.72.72,0,0,1,1-.29h0a.71.71,0,0,1,.29,1L29.46,62.9a.71.71,0,0,1-.95.29h0A.71.71,0,0,1,28.22,62.24Z" />
+    <path id="Rectangle_65" data-name="Rectangle 65" class="cls-6" d="M38.33,43.21l2.85-5.38a.71.71,0,0,1,1-.29h0a.69.69,0,0,1,.29,1l-2.85,5.38a.71.71,0,0,1-1,.29h0A.69.69,0,0,1,38.33,43.21Z" />
+  </g>
+</svg>

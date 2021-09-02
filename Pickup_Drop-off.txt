@@ -1,0 +1,10 @@
+
+
+Pick-up                            Drop-off
+
+Build-12,Swanston Street            Build-57,Cardigan Street
+
+Build-515,Dawson street             Build-220,McKimmies Rd,Bundoora
+
+
+Build-10, Swanston Street           35 Victa Rd, East Bendigo Vic 3550

@@ -1,0 +1,108 @@
+*:not(form)>.text-underline-transition::after,
+input.force.text-underline-transition~.transition-container::after,
+:not(form[class~=validated])>*>input.text-underline-transition~.transition-container::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: var(--text-underline-bottom,0);
+  border-bottom-width: var(--text-underline-width,1px);
+  border-bottom-color: var(--text-underline-color,inherit);
+  z-index: 2;
+  border-bottom-style: solid;
+  transition: transform var(--text-underline-transition-duration,.3s) var(--text-underline-transition-timing-function,ease-in-out);
+  transform: scaleX(0);
+  transform-origin: inherit;
+  // z-index: -1;
+}
+
+.text-underline-transition{
+  position: relative;
+}
+input.force~.transition-container{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-bottom-width: var(--text-underline-width,1px);
+  z-index: 1;
+}
+
+*:not(form)>.text-underline-transition:hover::after,
+*:not(form)>.text-underline-transition:focus::after,
+input.force.text-underline-transition:hover~.transition-container::after,
+input.force.text-underline-transition:focus~.transition-container::after,
+form:not(form[class~=validated])>*>input:hover~.transition-container::after,
+form:not(form[class~=validated])>*>input:focus~.transition-container::after{
+  transform: scaleX(1);
+}
+
+.text-letter-up-down-transition>*{
+  transform-origin: center;
+  transform: translateY(0);
+  transition: transform .5s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+// @media screen {
+  
+// }
+
+.text-letter-up-down-transition>*:hover,
+.text-letter-up-down-transition>*:focus{
+  transform: translateY(-30%)
+}
+
+.zoom-in-transition>.transition{
+  transform: scale(1);
+  transition: transform .5s ease-out;
+}
+
+.zoom-in-transition:hover>*.transition{
+  transform:scale(1.3);
+}
+
+.up-down-wave-animation{
+  opacity: 0;
+  transform: translateY(0) translateX(-50%);
+  animation: up-down-wave-animation 4s ease-in-out 2s forwards;
+}
+
+@keyframes up-down-wave-animation {
+  0%{
+    opacity: 0;
+    transform: translateY(0) translateX(-50%);
+  }
+  7%{
+    opacity: 1;
+    transform: translateY(100%) translateX(-50%);
+  }
+  17%{
+    opacity: 1;
+    transform: translateY(0) translateX(-50%);
+  }
+  29%{
+    opacity: 1;
+    transform: translateY(100%) translateX(-50%);
+  }
+  56%{
+    opacity: 1;
+    transform: translateY(0) translateX(-50%);
+  }
+  74%{
+    opacity: 1;
+    transform: translateY(100%) translateX(-50%);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0) translateX(-50%);
+  }
+}
+
+.text-fade-away-transition{
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.text-fade-away-transition:hover{
+  opacity: 0;
+}

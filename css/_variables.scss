@@ -1,0 +1,12 @@
+$enable-validation-icons: false;
+
+$form-validation-states: (
+  "invalid": (
+    "color": $form-feedback-invalid-color,
+    "icon": $form-feedback-icon-invalid
+  ),
+  "valid": (
+    "color": $primary,
+    "icon": $form-feedback-icon-valid
+  ),
+);

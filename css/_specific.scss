@@ -1,0 +1,74 @@
+body{
+  background: linear-gradient(355deg, rgba(93,93,93,0) 130vh, rgb(130, 130, 130) 150vh, rgb(189, 133, 127) 150vh, rgba(239,255,0,0) 170vh) center top/100% 200vh,
+            linear-gradient(5deg, rgba(93,93,93,0) 30vh, rgb(130, 130, 130) 50vh, rgb(189, 133, 127) 50vh, rgba(239,255,0,0) 70vh) center top/100% 200vh
+}
+
+.name-line::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: calc(100% + 1rem);
+  width: 2rem;
+  border-bottom: 1px solid black;
+}
+
+.name-line{
+  position: relative;
+}
+.name-right-line::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 1rem);
+  width: 3rem;
+  border-bottom: 2px solid gray;
+}
+
+.name-right-line{
+  position: relative;
+}
+
+a[name="menu-book"]{
+  transition: all .3s ease-in-out;
+}
+
+.search-form{
+  flex-direction: column!important;
+  .bus-hidden{
+    >div:first-child{
+      margin-right: 0!important;
+    }
+    >div:last-child{
+      display: none;
+    }
+  }
+  .bus{
+    display: initial!important;
+  }
+}
+
+$result-grid-column-count: (
+  md: 2,
+  lg: 3,
+  xl: 4,
+);
+
+@include media-breakpoint-down(md){
+  .car-details-img{
+    height: calc(100vw * 9 / 16)
+  }
+}
+
+.result-grid{
+  grid-template-columns: repeat(1, 1fr);
+  display: grid;
+  grid-auto-flow: row;
+}
+
+@each $breakpoint in (md,lg,xl) {
+  @include media-breakpoint-up($breakpoint){
+    .result-grid{
+      grid-template-columns: repeat(map-get($result-grid-column-count,$breakpoint),1fr);
+    }
+  }
+}

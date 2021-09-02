@@ -1,0 +1,239 @@
+$utilities: map-merge( $utilities,(
+  "overflow-x": (
+    property: overflow-x ,
+    values: visible hidden scroll auto,
+  ),
+  "overflow-y": (
+    property: overflow-y,
+    values: visible hidden scroll auto,
+  ),
+  "min-width": (
+    property: min-width,
+    class: minw,
+    responsive: true,
+    values:(
+      350: 350px,
+      fit-content: fit-content,
+    )
+  ),
+  "min-height": (
+    property: min-height,
+    class: minh,
+    responsive: true,
+    values:(
+      fit-content: fit-content,
+    )
+  ),
+  "width": map-merge(
+    map-get($utilities, "width"),
+    (
+      values: map-merge(
+        map-get(map-get($utilities, "width"), "values"),
+        (
+          fit-content: fit-content,
+          35: 35%,
+          5rem: 5rem,
+          50vw: 50vw,
+          75vw: 75vw,
+          initial: initial,
+        ),
+      ),
+      responsive: true,
+    ),
+  ),
+  "height": map-merge(
+    map-get($utilities, "height"),
+    (
+      values: map-merge(
+        map-get(map-get($utilities, "height"), "values"),
+        (
+          fit-content: fit-content,
+          initial: initial,
+        ),
+      ),
+      responsive: true,
+    ),
+  ),
+  "padding-start": map-merge(
+    map-get($utilities, "padding-start"),
+    (
+      values: map-merge(
+        map-get(map-get($utilities, "padding-start"), "values"),
+        (
+          10vw: 10vw,
+          7vw: 7vw
+        ),
+      ),
+    ),
+  ),
+  "padding": map-merge(
+    map-get($utilities, "padding"),
+    (
+      values: map-merge(
+        map-get(map-get($utilities, "padding"), "values"),
+        (
+          6: 6rem,
+        ),
+      ),
+    ),
+  ),
+  "text-align": map-merge(
+    map-get($utilities, "text-align"),
+    (
+      responsive: true,
+    ),
+  ),
+  'flex-basis':(
+    property: flex-basis,
+    responsive: true,
+    values:(
+      70: 70%,
+      30: 30%,
+      100: 100%,
+      50: 50%,
+    )
+  ),
+  "color": map-merge(
+    map-get($utilities, "color"),
+    (
+      values: map-merge(
+        map-get(map-get($utilities, "color"), "values"),
+        (
+          brown-red: #be8781,
+        ),
+      ),
+    ),
+  ),
+  "font-size": map-merge(
+    map-get($utilities, "font-size"),
+    (
+      responsive: true,
+      values: map-merge(
+        map-get(map-get($utilities, "font-size"), "values"),
+        (
+          small: small,
+        ),
+      ),
+    ),
+  ),
+  "border-color":map-merge(
+    map-get($utilities, "border-color"),
+    (
+      responsive: true,
+      values: map-merge(
+        map-get(map-get($utilities, "border-color"), "values"),
+        (
+          brown-red: #be8781,
+        ),
+      ),
+    ),
+  ),
+  "cursor":(
+    class: cursor,
+    property: cursor,
+    values: pointer none,
+  ),
+  "nav-link":(
+    class: nav-link,
+    property: color,
+    state: hover focus,
+    values:(
+      black: (
+        default: $gray-600,
+        state: $gray-700,
+      ),
+    )
+  ),
+  'padding-top':map-merge(
+    map-get($utilities, "padding-top"),
+    (
+      values:map-merge(
+        map-get(map-get($utilities, "padding-top"),values),
+        (
+          4_125rem: 4.125rem
+        )
+      )
+    )
+  ),
+  'shadow':map-merge(
+    map-get($utilities, "shadow"),
+    (
+      state: hover focus,
+    )
+  ),
+  "background-size":(
+    property: background-size,
+    class: bg-size,
+    values:(
+      100: 100%,
+    )
+  ),
+  "place-middle":(
+    property: margin-top transform,
+    class: place-middle,
+    values:(
+      t: 50% translateY(-50%),
+    )
+  ),
+  "mix-blend-mode":(
+    property: mix-blend-mode,
+    responsive: true,
+    values:(
+      normal:normal,
+      multiply:multiply,
+      screen:screen,
+      overlay	:overlay,
+      darken:darken,
+      lighten:lighten,
+      color-dodge:color-dodge,
+      color-burn:color-burn,
+      difference:difference,
+      exclusion	:exclusion	,
+      hue:hue,
+      saturation:saturation,
+      color:color,
+      luminosity:luminosity,
+    )
+  ),
+  "grid-gap":(
+    class: grid-gap,
+    responsive: true,
+    property: grid-gap,
+    values:$spacers
+  ),
+  "grid-gap-row":(
+    class: grid-gap-row,
+    responsive: true,
+    property: grid-row-gap,
+    values:$spacers
+  ),
+  "grid-gap-col":(
+    class: grid-gap-col,
+    property: grid-column-gap,
+    responsive: true,
+    values:$spacers
+  ),
+  "opacity":(
+    class: opacity,
+    property: opacity,
+    responsive: true,
+    values: (
+      1:1, 
+      d5:.5,
+      d9: .9,
+      d8: .8
+    ),
+  ),
+  
+));
+
+$grid-breakpoints: map-merge(
+  $grid-breakpoints,(
+  sm: 480px,
+));
+
+// "cursor":(
+//   class: cursor,
+//   property: cursor color background,
+//   values: pointer none,kdkd kdkk,
+// )
